@@ -6,7 +6,7 @@
 /*   By: ctoribio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 21:29:59 by ctoribio          #+#    #+#             */
-/*   Updated: 2024/03/22 21:50:23 by ctoribio         ###   ########.fr       */
+/*   Updated: 2024/03/26 13:33:47 by ctoribio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,3 +18,10 @@ int	ft_isalnum(int c)
 		return (1);
 	return (0);
 }
+
+/*
+#include <stdio.h>
+int	main(void)
+{
+	printf("%d", ft_isalnum('\0'));
+}*/
