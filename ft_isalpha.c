@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ctoribio <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ctoribio <ctoribio@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/22 19:57:18 by ctoribio          #+#    #+#             */
-/*   Updated: 2024/03/22 21:48:24 by ctoribio         ###   ########.fr       */
+/*   Created: 2024/03/26 14:16:15 by ctoribio          #+#    #+#             */
+/*   Updated: 2024/03/26 17:07:56 by ctoribio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,7 @@
  */
 int	ft_isalpha(int c)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
 	return (0);
 }
-
-/*
-#include <stdio.h>
-int	main(void)
-{
-	int	i;
-
-	i = ft_isalpha('Z');
-	printf("%d", i);
-}*/

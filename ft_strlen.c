@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctoribio <ctoribio@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/26 14:16:55 by ctoribio          #+#    #+#             */
-/*   Updated: 2024/03/26 17:08:35 by ctoribio         ###   ########.fr       */
+/*   Created: 2024/03/26 17:14:28 by ctoribio          #+#    #+#             */
+/*   Updated: 2024/03/26 17:40:16 by ctoribio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-/*
- * Takes integer as an argument. Character is passed to the function. 
- * Internally, the character is converted to its ASCII value for the check.
- */
-int	ft_isdigit(int n)
+size_t	ft_strlen(const char *str)
 {
-	if (n >= '0' && n <= '9')
-		return (1);
-	return (0);
+	size_t	count;
+
+	count = 0;
+	while (*str != '\0')
+	{
+		count++;
+		str++;
+	}
+	return (count);
 }
