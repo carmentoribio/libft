@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctoribio <ctoribio@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/26 14:17:42 by ctoribio          #+#    #+#             */
-/*   Updated: 2024/03/28 20:18:22 by ctoribio         ###   ########.fr       */
+/*   Created: 2024/03/28 19:10:46 by ctoribio          #+#    #+#             */
+/*   Updated: 2024/03/28 20:22:59 by ctoribio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
+/*
+ * fills the first len bytes of the memory area pointed to by dest with the
+ * constant byte c
+ */
+void	*ft_memset(void *dest, int c, size_t len)
+{
+	size_t	i;
 
-int		ft_isalpha(int c);
-int		ft_isdigit(int n);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-size_t	ft_strlen(const char *str);
-void	*ft_memset(void *dest, int c, size_t len);
-
-#endif
+	i = 0;
+	while (i != len)
+	{
+		((unsigned char *) dest)[i] = c;
+		i++;
+	}
+	return (dest);
+}
