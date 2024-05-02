@@ -19,8 +19,8 @@ int main()
 	printf("TEST ft_isdigit()\n");
 	
 	c = '3';
-	
-	if (isdigit(c) == ft_isdigit(c))
+	//printf("%d\n%d\n", isdigit(c), ft_isdigit(c));
+	if (isdigit(c) != 0 && 0 != ft_isdigit(c))
 		printf("\tOK✅\n");
 	else
 		printf("\tERROR❌\n");
@@ -49,8 +49,8 @@ int main()
 	printf("TEST ft_isprint()\n");
 	
 	c = '~';
-	
-	if (isprint(c) == ft_isprint(c))
+	//printf("%d\n%d\n", isprint(c), ft_isprint(c));	
+	if (isprint(c) > 0 && ft_isprint(c) > 0)
 		printf("\tOK✅\n");
 	else
 		printf("\tERROR❌\n");
@@ -64,7 +64,7 @@ int main()
 		printf("\tOK✅\n");
 	else
 		printf("\tERROR❌\n");
-
+	
 	//------------------------------ memset
 	printf("TEST ft_memset()\n");	
 
@@ -77,6 +77,51 @@ int main()
 	printf("\tDest1: %s\n", dest1);
 	printf("\tDest2: %s\n", dest2);
 	
+	//------------------------------ bzero
+	printf("TEST ft_bzero()\n");	
+
+	bzero(dest1, 7);
+	ft_bzero(dest2, 7);
+
+	printf("\tDest1: %s\n", dest1);
+	printf("\tDest2: %s\n", dest2);
+	
 	free(dest1);
 	free(dest2);
+
+	//------------------------------ memcpy
+	printf("TEST ft_memcpy()\n");
+
+	char *src = (char *)malloc(10);
+	src = strdup("0123456789");
+	char *d1 = (char *)malloc(7);
+	d1 = strdup("AAAAAAA");
+	char *d2 = (char *)malloc(7);
+	d2 = strdup("BBBBBBB");
+
+	memcpy(d1, src, 10);
+	ft_memcpy(d2, src, 10);
+
+	printf("memcpy: %s\nft_memcpy: %s\n", d1, d2);
+
+	//------------------------------ memmove
+	printf("TEST ft_memmove()\n");
+	char csrc[100] = "HolaQueTal";
+	ft_memmove(csrc+4, csrc, strlen(csrc)+1);
+	printf("%s\n", csrc);
+	
+	//------------------------------ memmove
+	printf("TEST ft_memmove()\n");
+	//------------------------------ memmove
+	printf("TEST ft_memmove()\n");
+	//------------------------------ memmove
+	printf("TEST ft_memmove()\n");
+	//------------------------------ memmove
+	printf("TEST ft_memmove()\n");
+	//------------------------------ memmove
+	printf("TEST ft_memmove()\n");
+	//------------------------------ memmove
+	printf("TEST ft_memmove()\n");
+	//------------------------------ memmove
+	printf("TEST ft_memmove()\n");
 }

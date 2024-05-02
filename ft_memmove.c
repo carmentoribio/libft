@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctoribio <ctoribio@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 19:10:46 by ctoribio          #+#    #+#             */
-/*   Updated: 2024/05/02 18:47:58 by ctoribio         ###   ########.fr       */
+/*   Created: 2024/05/02 18:26:34 by ctoribio          #+#    #+#             */
+/*   Updated: 2024/05/02 19:11:29 by ctoribio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
- * fills the first len bytes of the memory area pointed to by dest with the
- * constant byte c
- */
-void	*ft_memset(void *dest, int c, size_t len)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t			i;
-	unsigned char	*d;
+	size_t	i;
+	char	*d;
+	char	*s;
 
-	d = (unsigned char *)dest;
-	i = 0;
-	while (i != len)
+	if (dest == src || n == 0)
+		return (dest);
+	d = (char *)dest;
+	s = (char *)src;
+	if (dest <= src)
 	{
-		d[i] = c;
-		i++;
+		i = 0;
+		while (i < n)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	}
+	else
+	{
+		while (n--)
+		{
+			d[n] = s[n];
+		}
 	}
 	return (dest);
 }
