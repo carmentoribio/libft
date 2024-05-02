@@ -60,6 +60,7 @@ int main()
 	
 	char* str = "1234\0abcd";
 
+	printf("\tstrlen : %ld\n\tft_strlen : %ld\n", strlen(str), ft_strlen(str));
 	if (strlen(str) == ft_strlen(str))
 		printf("\tOK✅\n");
 	else
@@ -102,26 +103,41 @@ int main()
 	memcpy(d1, src, 10);
 	ft_memcpy(d2, src, 10);
 
-	printf("memcpy: %s\nft_memcpy: %s\n", d1, d2);
+	printf("\tmemcpy: %s\n\tft_memcpy: %s\n", d1, d2);
 
 	//------------------------------ memmove
 	printf("TEST ft_memmove()\n");
+	
 	char csrc[100] = "HolaQueTal";
 	ft_memmove(csrc+4, csrc, strlen(csrc)+1);
-	printf("%s\n", csrc);
 	
-	//------------------------------ memmove
+	printf("\t%s\n", csrc);
+	
+	//------------------------------ strlcpy
+	printf("TEST ft_strlcpy()\n");
+	
+	const char *src2 = "holaa\0";
+	char lcpy[10] = "0123456789";
+
+	printf("\tlen = %ld\n\t%s\n", ft_strlcpy(lcpy, src2, 6), lcpy);
+
+	//------------------------------ strlcat
+	printf("TEST ft_strlcat()\n");
+	
+	const char *src3 = "holaa\0";
+	char lcat[10] = "0123456789";
+
+	printf("\tlen = %ld\n\t%s\n", ft_strlcat(lcat, src3, 6), lcat);
+	//------------------------------ strlcat
 	printf("TEST ft_memmove()\n");
-	//------------------------------ memmove
+	//------------------------------ toupper
 	printf("TEST ft_memmove()\n");
-	//------------------------------ memmove
+	//------------------------------ tolower
 	printf("TEST ft_memmove()\n");
-	//------------------------------ memmove
+	//------------------------------- strchr
 	printf("TEST ft_memmove()\n");
-	//------------------------------ memmove
+	//------------------------------ strrchr
 	printf("TEST ft_memmove()\n");
-	//------------------------------ memmove
-	printf("TEST ft_memmove()\n");
-	//------------------------------ memmove
+	//------------------------------ strncmp
 	printf("TEST ft_memmove()\n");
 }
