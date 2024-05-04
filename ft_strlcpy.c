@@ -6,7 +6,7 @@
 /*   By: ctoribio <ctoribio@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 19:27:10 by ctoribio          #+#    #+#             */
-/*   Updated: 2024/05/02 20:44:50 by ctoribio         ###   ########.fr       */
+/*   Updated: 2024/05/04 15:07:49 by ctoribio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,17 @@
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	char		*end;
-	char		*d;
-	const char	*s;
+	size_t	src_len;
 
-	end = dest + size;
-	d = dest;
-	s = src;
-	while (*s != '\0' && d < end)
+	src_len = ft_strlen(src);
+	if (src_len + 1 < size)
 	{
-		*d++ = *s++;
+		memcpy(dest, src, src_len + 1);
+	}else if (size != 0)
+	{
+		ft_memcpy(dest, src, size - 1);
+		dest[size] = '\0';
 	}
-	if (d < end)
-		*d = '\0';
-	else
-		d[-1] = '\0';
-	while (*s != '\0')
-		s++;
-	return ((size_t)(s - src));
+
+	return (src_len);
 }

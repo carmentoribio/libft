@@ -122,12 +122,12 @@ int main()
 	printf("\tlen = %ld\n\t%s\n", ft_strlcpy(lcpy, src2, 6), lcpy);
 
 	//------------------------------ strlcat
-	printf("TEST ft_strlcat()\n");
+	/*printf("TEST ft_strlcat()\n");
 	
 	const char *src3 = "holaa\0";
 	char lcat[10] = "0123456789";
 
-	printf("\tlen = %ld\n\t%s\n", ft_strlcat(lcat, src3, 6), lcat);
+	printf("\tlen = %ld\n\t%s\n", ft_strlcat(lcat, src3, 6), lcat);*/
 	//------------------------------ strlcat
 	printf("TEST ft_memmove()\n");
 	//------------------------------ toupper

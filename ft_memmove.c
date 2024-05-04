@@ -6,11 +6,31 @@
 /*   By: ctoribio <ctoribio@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 18:26:34 by ctoribio          #+#    #+#             */
-/*   Updated: 2024/05/02 19:24:44 by ctoribio         ###   ########.fr       */
+/*   Updated: 2024/05/04 15:03:05 by ctoribio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	copy_forward(unsigned char *dest, unsigned char *src, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+}
+
+void	copy_from_end(unsigned char *dest, unsigned char *src, size_t n)
+{
+	while (n-- != 0)
+	{
+		dest[n] = src[n];
+	}
+}
 
 /*
    If dest pointer in memory is before (<) src pointer, we can copy as expected
@@ -20,29 +40,11 @@
  */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	i;
-	char	*d;
-	char	*s;
-
 	if (dest == src || n == 0)
 		return (dest);
-	d = (char *)dest;
-	s = (char *)src;
 	if (dest <= src)
-	{
-		i = 0;
-		while (i < n)
-		{
-			d[i] = s[i];
-			i++;
-		}
-	}
+		copy_forward((unsigned char *)dest, (unsigned char *)src, n);
 	else
-	{
-		while (n--)
-		{
-			d[n] = s[n];
-		}
-	}
+		copy_from_end((unsigned char *)dest, (unsigned char *)src, n);
 	return (dest);
 }

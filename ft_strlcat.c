@@ -6,7 +6,7 @@
 /*   By: ctoribio <ctoribio@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 20:53:11 by ctoribio          #+#    #+#             */
-/*   Updated: 2024/05/02 21:07:28 by ctoribio         ###   ########.fr       */
+/*   Updated: 2024/05/03 20:02:24 by ctoribio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,5 @@
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	
-
-	return (ft_strlen(dest));
+	return (ft_strlen(dest) + ft_strlen(src));
 }
