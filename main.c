@@ -180,15 +180,15 @@ int	main()
 	char *d2 = (char *)malloc(7);
 	d2 = strdup("BBBBBBB");
 
-	memcpy(d1, src, 10);
-	ft_memcpy(d2, src, 10);
+	memcpy(d1, src, 4);
+	ft_memcpy(d2, src, 4);
 
 	printf("\tmemcpy: %s\n\tft_memcpy: %s\n", d1, d2);
 
 	//------------------------------ memmove
 	printf("TEST ft_memmove()\n");
 	
-	char csrc[100] = "HolaQueTal";
+	char csrc[20] = "HolaQueTal";
 	ft_memmove(csrc+4, csrc, strlen(csrc)+1);
 	
 	printf("\t%s\n", csrc);
@@ -199,22 +199,64 @@ int	main()
 	const char *src2 = "holaa\0";
 	char lcpy[10] = "0123456789";
 
-	printf("\tlen = %ld\n\t%s\n", ft_strlcpy(lcpy, src2, 6), lcpy);
+	printf("\tlen = %ld\n\t%s\n", ft_strlcpy(lcpy, src2, 9), lcpy);
 
 	//------------------------------ strlcat
-	/*printf("TEST ft_strlcat()\n");
+	printf("TEST ft_strlcat()\n");
 	
-	const char *src3 = "holaa\0";
-	char lcat[10] = "0123456789";
+	char *lcat = (char *)malloc(6);
+	lcat = strdup("12345");
 
-	printf("\tlen = %ld\n\t%s\n", ft_strlcat(lcat, src3, 6), lcat);
-	//------------------------------ strlcat
-	printf("TEST ft_memmove()\n");
+	printf("\tlen = %ld\n\t%s\n", ft_strlcat(lcat, src2, 3), lcat);
+	free(lcat);
+	
 	//------------------------------ toupper
-	printf("TEST ft_memmove()\n");
+	printf("TEST ft_toupper()\n");
+
+	c = 'a';
+
+	if (toupper(c) == ft_toupper(c))
+		printf("\tOK✅\n");
+	else
+		printf("\tERROR❌\n")
+			;
+	c = '\0';
+
+	if (toupper(c) == ft_toupper(c))
+		printf("\tOK✅\n");
+	else
+		printf("\tERROR❌\n");
+
+	c = '~';
+
+	if (toupper(c) == ft_toupper(c))
+		printf("\tOK✅\n");
+	else
+		printf("\tERROR❌\n");
 	//------------------------------ tolower
-	printf("TEST ft_memmove()\n");
-	//------------------------------- strchr
+	printf("TEST ft_tolower()\n");
+
+	c = 'Q';
+
+	if (toupper(c) == ft_toupper(c))
+		printf("\tOK✅\n");
+	else
+		printf("\tERROR❌\n")
+			;
+	c = '\0';
+
+	if (toupper(c) == ft_toupper(c))
+		printf("\tOK✅\n");
+	else
+		printf("\tERROR❌\n");
+
+	c = '|';
+
+	if (toupper(c) == ft_toupper(c))
+		printf("\tOK✅\n");
+	else
+		printf("\tERROR❌\n");
+	/*//------------------------------- strchr
 	printf("TEST ft_memmove()\n");
 	//------------------------------ strrchr
 	printf("TEST ft_memmove()\n");
