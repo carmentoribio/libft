@@ -3,14 +3,28 @@
 #include <ctype.h>
 #include <string.h>
 
-int main()
+int	main()
 {
 	//------------------------------- isalpha
 	printf("TEST ft_isalpha()\n");
-	
+
 	char c = '3';
+
+	if ((isalpha(c) == 0 && ft_isalpha(c) == 0) || (isalpha(c) != 0 && ft_isalpha(c) != 0))
+		printf("\tOK✅\n");
+	else
+		printf("\tERROR❌\n");
 	
-	if (isalpha(c) == ft_isalpha(c))
+	c = 'a';
+
+	if ((isalpha(c) == 0 && ft_isalpha(c) == 0) || (isalpha(c) != 0 && ft_isalpha(c) != 0))
+		printf("\tOK✅\n");
+	else
+		printf("\tERROR❌\n");
+
+	c = '\0';
+
+	if ((isalpha(c) == 0 && ft_isalpha(c) == 0) || (isalpha(c) != 0 && ft_isalpha(c) != 0))
 		printf("\tOK✅\n");
 	else
 		printf("\tERROR❌\n");
@@ -19,18 +33,48 @@ int main()
 	printf("TEST ft_isdigit()\n");
 	
 	c = '3';
-	//printf("%d\n%d\n", isdigit(c), ft_isdigit(c));
-	if (isdigit(c) != 0 && 0 != ft_isdigit(c))
+
+	if ((isdigit(c) == 0 && ft_isdigit(c) == 0) || (isdigit(c) != 0 && ft_isdigit(c) != 0))
 		printf("\tOK✅\n");
 	else
 		printf("\tERROR❌\n");
-	
+
+
+	c = '~';
+
+	if ((isdigit(c) == 0 && ft_isdigit(c) == 0) || (isdigit(c) != 0 && ft_isdigit(c) != 0))
+		printf("\tOK✅\n");
+	else
+		printf("\tERROR❌\n");
+
+
+	c = '\0';
+
+	if ((isdigit(c) == 0 && ft_isdigit(c) == 0) || (isdigit(c) != 0 && ft_isdigit(c) != 0))
+		printf("\tOK✅\n");
+	else
+		printf("\tERROR❌\n");
+
 	//-------------------------------- isalnum
 	printf("TEST ft_isalnum()\n");
 	
 	c = '\0';
 	
-	if (isalnum(c) == ft_isalnum(c))
+	if ((isalnum(c) == 0 && ft_isalnum(c) == 0) || (isalnum(c) != 0 && ft_isalnum(c) != 0))
+		printf("\tOK✅\n");
+	else
+		printf("\tERROR❌\n");
+
+	c = 'A';
+	
+	if ((isalnum(c) == 0 && ft_isalnum(c) == 0) || (isalnum(c) != 0 && ft_isalnum(c) != 0))
+		printf("\tOK✅\n");
+	else
+		printf("\tERROR❌\n");
+
+	c = '~';
+	
+	if ((isalnum(c) == 0 && ft_isalnum(c) == 0) || (isalnum(c) != 0 && ft_isalnum(c) != 0))
 		printf("\tOK✅\n");
 	else
 		printf("\tERROR❌\n");
@@ -40,7 +84,21 @@ int main()
 	
 	c = '\200';
 	
-	if (isascii(c) == ft_isascii(c))
+	if ((isascii(c) == 0 && ft_isascii(c) == 0) || (isascii(c) != 0 && ft_isascii(c) != 0))
+		printf("\tOK✅\n");
+	else
+		printf("\tERROR❌\n");
+
+	c = '\0';
+	
+	if ((isascii(c) == 0 && ft_isascii(c) == 0) || (isascii(c) != 0 && ft_isascii(c) != 0))
+		printf("\tOK✅\n");
+	else
+		printf("\tERROR❌\n");
+
+	c = '~';
+	
+	if ((isascii(c) == 0 && ft_isascii(c) == 0) || (isascii(c) != 0 && ft_isascii(c) != 0))
 		printf("\tOK✅\n");
 	else
 		printf("\tERROR❌\n");
@@ -49,8 +107,22 @@ int main()
 	printf("TEST ft_isprint()\n");
 	
 	c = '~';
-	//printf("%d\n%d\n", isprint(c), ft_isprint(c));	
-	if (isprint(c) > 0 && ft_isprint(c) > 0)
+
+	if ((isprint(c) == 0 && ft_isprint(c) == 0) || (isprint(c) != 0 && ft_isprint(c) != 0))
+		printf("\tOK✅\n");
+	else
+		printf("\tERROR❌\n");
+
+	c = ';';
+
+	if ((isprint(c) == 0 && ft_isprint(c) == 0) || (isprint(c) != 0 && ft_isprint(c) != 0))
+		printf("\tOK✅\n");
+	else
+		printf("\tERROR❌\n");
+
+	c = '\t';
+
+	if ((isprint(c) == 0 && ft_isprint(c) == 0) || (isprint(c) != 0 && ft_isprint(c) != 0))
 		printf("\tOK✅\n");
 	else
 		printf("\tERROR❌\n");
@@ -60,20 +132,28 @@ int main()
 	
 	char* str = "1234\0abcd";
 
-	printf("\tstrlen : %ld\n\tft_strlen : %ld\n", strlen(str), ft_strlen(str));
+	printf("\tstrlen : %ld\n\tft_strlen : %ld", strlen(str), ft_strlen(str));
 	if (strlen(str) == ft_strlen(str))
 		printf("\tOK✅\n");
 	else
 		printf("\tERROR❌\n");
 	
+	str = "1234abcd";
+
+	printf("\tstrlen : %ld\n\tft_strlen : %ld", strlen(str), ft_strlen(str));
+	if (strlen(str) == ft_strlen(str))
+		printf("\tOK✅\n");
+	else
+		printf("\tERROR❌\n");
+
 	//------------------------------ memset
 	printf("TEST ft_memset()\n");	
 
 	char *dest1 = (char *) malloc(11);
 	char *dest2 = (char *) malloc(11);
 
-	memset(dest1, 'A', 12);
-	ft_memset(dest2, 'A', 12);
+	memset(dest1, 'A', 15);
+	ft_memset(dest2, 'B', 15);
 
 	printf("\tDest1: %s\n", dest1);
 	printf("\tDest2: %s\n", dest2);
@@ -127,7 +207,7 @@ int main()
 	const char *src3 = "holaa\0";
 	char lcat[10] = "0123456789";
 
-	printf("\tlen = %ld\n\t%s\n", ft_strlcat(lcat, src3, 6), lcat);*/
+	printf("\tlen = %ld\n\t%s\n", ft_strlcat(lcat, src3, 6), lcat);
 	//------------------------------ strlcat
 	printf("TEST ft_memmove()\n");
 	//------------------------------ toupper
@@ -139,5 +219,5 @@ int main()
 	//------------------------------ strrchr
 	printf("TEST ft_memmove()\n");
 	//------------------------------ strncmp
-	printf("TEST ft_memmove()\n");
+	printf("TEST ft_memmove()\n");*/
 }
