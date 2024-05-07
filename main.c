@@ -256,10 +256,44 @@ int	main()
 		printf("\tOK✅\n");
 	else
 		printf("\tERROR❌\n");
-	/*//------------------------------- strchr
-	printf("TEST ft_memmove()\n");
+	//------------------------------- strchr
+	printf("TEST ft_strchr()\n");
+
+	char schr[11] = "abcdeedcba";
+	char nchr[11] = "";
+
+	printf("\tstrchr: %s\n", strchr(schr, 'b'));
+	printf("\tft_strchr: %s\n\n", ft_strchr(schr, 'b'));
+	
+	printf("\tstrchr: %s\n", strchr(schr, 'e'));
+	printf("\tft_strchr: %s\n\n", ft_strchr(schr, 'e'));
+
+	printf("\tstrchr: %s\n", strchr(schr, '\0'));
+	printf("\tft_strchr: %s\n\n", ft_strchr(schr, '\0'));
+
+	printf("\tstrchr: %s\n", strchr(nchr, '\0'));
+	printf("\tft_strchr: %s\n\n", ft_strchr(nchr, '\0'));
+
+	printf("\tstrchr: %s\n", strchr(schr, 'x'));
+	printf("\tft_strchr: %s\n", ft_strchr(schr, 'x'));
 	//------------------------------ strrchr
-	printf("TEST ft_memmove()\n");
+	printf("TEST ft_strrchr()\n");
+
+	printf("\tstrrchr: %s\n", strrchr(schr, 'b'));
+	printf("\tft_strrchr: %s\n\n", ft_strrchr(schr, 'b'));
+	
+	printf("\tstrrchr: %s\n", strrchr(schr, 'e'));
+	printf("\tft_strrchr: %s\n\n", ft_strrchr(schr, 'e'));
+
+	printf("\tstrrchr: %s\n", strrchr(schr, '\0'));
+	printf("\tft_strrchr: %s\n\n", ft_strrchr(schr, '\0'));
+
+	printf("\tstrrchr: %s\n", strrchr(nchr, '\0'));
+	printf("\tft_strrchr: %s\n\n", ft_strrchr(nchr, '\0'));
+
+	printf("\tstrrchr: %s\n", strrchr(schr, 'x'));
+	printf("\tft_strrchr: %s\n", ft_strrchr(schr, 'x'));
+
 	//------------------------------ strncmp
-	printf("TEST ft_memmove()\n");*/
+	//printf("TEST ft_memmove()\n");
 }
