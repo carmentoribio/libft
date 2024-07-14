@@ -6,7 +6,7 @@
 /*   By: ctoribio <ctoribio@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 16:37:38 by ctoribio          #+#    #+#             */
-/*   Updated: 2024/07/14 16:42:58 by ctoribio         ###   ########.fr       */
+/*   Updated: 2024/07/14 17:22:47 by ctoribio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-
+	new->next = *lst;
+	*lst = new;
 }
