@@ -1,0 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ctoribio <ctoribio@student.42madrid>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/07 13:51:54 by ctoribio          #+#    #+#             */
+/*   Updated: 2024/05/07 13:56:13 by ctoribio         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/**
+ * If 'c' is  an uppercase letter, it returns its lowercase equivalent.
+ */
+int	ft_tolower(int c)
+{
+	if ('A' <= c && c <= 'Z')
+		return (c + 32);
+	return (c);
+}
