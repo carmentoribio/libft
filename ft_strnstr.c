@@ -12,11 +12,6 @@
 
 #include "libft.h"
 
-/*
-   Localiza la primera aparición de la cadena terminada
-   en nulo little en la cadena big, donde no se buscan
-   más de len caracteres
- */
 /**
  * Locates the first occurrence of the null-terminated string 'little'
  * in the string 'big', where not more than len characters are searched.

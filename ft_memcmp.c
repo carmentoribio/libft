@@ -36,23 +36,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		return (0);
 	return (str1[i] - str2[i]);
 }
-
-/*
-#include <stdio.h>
-int main()
-{
-	printf("Expected: -40 Got: %d\n", 
-	ft_memcmp("0x5tQYyFjJnDB28","X8hW9rqU", 2));
-	printf("Expected: 2 Got: %d\n", 
-	ft_memcmp("oVuMWaSxrgP9","mptLXSEPIgV", -23));
-	printf("Expected: -1 Got: %d\n", 
-	ft_memcmp("dPgGlX3a2my7oTS8","eZCOqW532lA7", 12));
-	printf("Expected: 15 Got: %d\n", 
-	ft_memcmp("AERUliwaf6m","2zRs", -38));
-	printf("Expected: 17 Got: %d\n", 
-	ft_memcmp("kM4g","ZrJ", -58));
-	printf("Expected: 19 Got: %d\n", 
-	ft_memcmp("LT7yMS9DFKUvWJz ","9u08B5zmchTyFwk", -7));
-	printf("Expected: 24 Got: %d\n", 
-	ft_memcmp("h6PSrFvkU0","Poh5ayKXpzsB2 ", -33));
-}*/
