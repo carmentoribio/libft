@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctoribio <ctoribio@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/14 16:37:38 by ctoribio          #+#    #+#             */
-/*   Updated: 2024/08/05 18:19:06 by ctoribio         ###   ########.fr       */
+/*   Created: 2024/08/05 18:20:45 by ctoribio          #+#    #+#             */
+/*   Updated: 2024/08/05 18:30:55 by ctoribio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Adds the node 'new' to the front of the list 'lst'.
+ * Counts the number of nodes in a list.
  */
-void	ft_lstadd_front(t_list **lst, t_list *new)
+int	ft_lstsize(t_list *lst)
 {
-	if (!lst || !*lst || !new)
-		return ;
-	new->next = *lst;
-	*lst = new;
+	int	size;
+
+	size = 0;
+	while (lst)
+	{
+		size++;
+		lst = lst->next;
+	}
+	return (size);
 }

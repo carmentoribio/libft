@@ -6,7 +6,7 @@
 #    By: ctoribio <ctoribio@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/26 14:12:16 by ctoribio          #+#    #+#              #
-#    Updated: 2024/07/14 16:35:09 by ctoribio         ###   ########.fr        #
+#    Updated: 2024/08/05 18:55:11 by ctoribio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libft.a
@@ -20,8 +20,7 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	   ft_substr.c ft_tolower.c ft_toupper.c
 OBJ = ${SRC:.c=.o}
 
-SRCBONUS = ft_lstnew.c 
-#ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+SRCBONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 		   ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
 		   ft_lstmap.c
 OBJBONUS = ${SRCBONUS:.c=.o}
@@ -35,7 +34,7 @@ ${NAME}: ${OBJ}
 	ar rcs ${NAME} ${OBJ}
 
 bonus: ${OBJBONUS}
-	$(MAKE) "OBJS=$(OBJBONUS)"
+	${MAKE} "OBJS=${OBJBONUS}"
 
 clean:
 	rm -f ${OBJ} ${OBJBONUS}

@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctoribio <ctoribio@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/14 16:37:38 by ctoribio          #+#    #+#             */
-/*   Updated: 2024/08/05 18:19:06 by ctoribio         ###   ########.fr       */
+/*   Created: 2024/08/05 19:48:47 by ctoribio          #+#    #+#             */
+/*   Updated: 2024/08/05 19:48:49 by ctoribio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/**
- * Adds the node 'new' to the front of the list 'lst'.
- */
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (!lst || !*lst || !new)
-		return ;
-	new->next = *lst;
-	*lst = new;
+	t_list	*elem;
+	t_list	*first;
+
+	first = NULL;
+	while (lst)
+	{
+		elem = ft_lstnew(f(lst->content));
+		if (elem == NULL)
+		{
+			ft_lstclear(&first, del);
+		}
+		ft_lstadd_back(&first, elem);
+		lst = lst->next;
+	}
+	return (first);
 }

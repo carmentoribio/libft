@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ctoribio <ctoribio@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/14 16:37:38 by ctoribio          #+#    #+#             */
-/*   Updated: 2024/08/05 18:19:06 by ctoribio         ###   ########.fr       */
+/*   Created: 2024/08/05 18:36:54 by ctoribio          #+#    #+#             */
+/*   Updated: 2024/08/05 18:46:35 by ctoribio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Adds the node 'new' to the front of the list 'lst'.
+ * Adds the node 'new' at the end of 'lst'.
  */
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!lst || !*lst || !new)
+	t_list	*last;
+
+	if (!lst || !new)
 		return ;
-	new->next = *lst;
-	*lst = new;
+	last = ft_lstlast(*lst);
+	if (!last)
+		*lst = new;
+	else
+		last->next = new;
 }

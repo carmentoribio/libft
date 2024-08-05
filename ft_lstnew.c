@@ -12,6 +12,11 @@
 
 #include "libft.h"
 
+/**
+ * Creates a new node using malloc.
+ * Variable 'content' is initialized with the content of the 
+ * parameter 'content'. Variable 'next' is initialized with 'NULL'.
+ */
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*res;
@@ -23,3 +28,10 @@ t_list	*ft_lstnew(void *content)
 	res->next = NULL;
 	return (res);
 }
+/*
+#include <stdio.h>
+int main()
+{
+	t_list *messi = ft_lstnew((void *)2);
+	printf("%p\n", messi->content);
+}*/
