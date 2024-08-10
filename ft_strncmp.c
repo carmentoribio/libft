@@ -6,7 +6,7 @@
 /*   By: ctoribio <ctoribio@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:38:29 by ctoribio          #+#    #+#             */
-/*   Updated: 2024/07/10 20:13:06 by ctoribio         ###   ########.fr       */
+/*   Updated: 2024/08/10 13:46:37 by ctoribio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	while (i < n && s1[i] && s2[i] && s1[i] == s2[i])
 		i++;
 	if (i == n)
-		return (0); // ESTO SE PUEDE BORRAR CREO
+		return (0);
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
