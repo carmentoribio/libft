@@ -33,8 +33,8 @@ all: ${NAME}
 ${NAME}: ${OBJ}
 	ar rcs ${NAME} ${OBJ}
 
-bonus: ${OBJBONUS}
-	${MAKE} "OBJS=${OBJBONUS}"
+bonus: ${OBJ} ${OBJBONUS}
+	ar rcs ${NAME} ${OBJ} ${OBJBONUS}
 
 clean:
 	rm -f ${OBJ} ${OBJBONUS}

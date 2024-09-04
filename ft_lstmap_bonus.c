@@ -27,12 +27,12 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst)
 	{
 		node = ft_lstnew(f(lst->content));
-		ft_lstadd_back(&first, node);
 		if (node == NULL)
 		{
 			ft_lstclear(&first, del);
 			return (NULL);
 		}
+		ft_lstadd_back(&first, node);
 		lst = lst->next;
 	}
 	return (first);
